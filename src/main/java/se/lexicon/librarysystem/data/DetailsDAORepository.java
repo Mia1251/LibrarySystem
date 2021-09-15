@@ -21,11 +21,13 @@ public class DetailsDAORepository implements DetailsDAO {
     }
 
     @Override
+    @Transactional
     public Details findById(int detailsId) {
         return em.find(Details.class,detailsId);
     }
 
     @Override
+    @Transactional
     public Collection<Details> findAll() {
         List<Details> foundAll = new ArrayList<>();
         foundAll = em.createQuery("Select a From Details a", Details.class).getResultList();

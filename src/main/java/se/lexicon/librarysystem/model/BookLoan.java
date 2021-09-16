@@ -1,4 +1,4 @@
-package se.lexicon.librarysystem.entity;
+package se.lexicon.librarysystem.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -13,16 +13,22 @@ public class BookLoan {
     private LocalDate loanDate;
     private LocalDate dueDate;
     private Boolean returned;
+
     @ManyToOne(
             cascade = {CascadeType.PERSIST,CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH},
             fetch = FetchType.LAZY
     )
+    @JoinColumn(name="appUser_id")
     private AppUser borrower;
+
+
     @ManyToOne(
             cascade = {CascadeType.PERSIST,CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH},
             fetch = FetchType.LAZY
     )
     private Book book;
+
+
 
     public BookLoan() {
     }
@@ -30,6 +36,7 @@ public class BookLoan {
     public BookLoan(AppUser borrower, Book book){
         this.borrower = borrower;
         this.book = book;
+        this.book.setAvailable(false);
     }
 
     public BookLoan(LocalDate loanDate, LocalDate dueDate, Boolean returned, AppUser borrower, Book book) {
@@ -38,6 +45,7 @@ public class BookLoan {
         this.returned = returned;
         this.borrower = borrower;
         this.book = book;
+        this.book.setAvailable(false);
     }
 
     public int getLoanId() {

@@ -1,10 +1,7 @@
 package se.lexicon.librarysystem.data;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import se.lexicon.librarysystem.entity.AppUser;
-import se.lexicon.librarysystem.entity.Author;
+import se.lexicon.librarysystem.model.Author;
 
-import javax.persistence.EntityManager;
 import java.util.Collection;
 
 public interface AuthorDAO {

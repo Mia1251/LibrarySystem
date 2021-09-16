@@ -1,6 +1,7 @@
-package se.lexicon.librarysystem.entity;
+package se.lexicon.librarysystem.model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -14,10 +15,12 @@ public class Book {
     private String isbn;
     private String title;
     private int maxLoanDays;
+    private boolean available = true;
 
     @ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH},fetch = FetchType.LAZY)
     @JoinTable(name="author_author_book",joinColumns = @JoinColumn(name="book_id"),inverseJoinColumns = @JoinColumn(name = "author_id"))
     private Set<Author> authors;
+
     public Book() {
     }
 
@@ -25,6 +28,22 @@ public class Book {
         this.isbn = isbn;
         this.title = title;
         this.maxLoanDays = maxLoanDays;
+    }
+
+    public Book(String isbn, String title, int maxLoanDays, boolean available){
+        this.isbn = isbn;
+        this.title = title;
+        this.maxLoanDays = maxLoanDays;
+        this.available = available;
+    }
+
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 
     public int getBookId() {

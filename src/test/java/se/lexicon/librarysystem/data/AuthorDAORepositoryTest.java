@@ -7,10 +7,7 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestEntityManager;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.boot.test.context.SpringBootTest;
-import se.lexicon.librarysystem.entity.AppUser;
-import se.lexicon.librarysystem.entity.Author;
-import se.lexicon.librarysystem.entity.Book;
-import se.lexicon.librarysystem.entity.BookLoan;
+import se.lexicon.librarysystem.model.Author;
 
 import javax.transaction.Transactional;
 

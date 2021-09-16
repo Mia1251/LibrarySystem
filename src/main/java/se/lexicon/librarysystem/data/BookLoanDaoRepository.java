@@ -2,7 +2,8 @@ package se.lexicon.librarysystem.data;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import se.lexicon.librarysystem.entity.BookLoan;
+import se.lexicon.librarysystem.model.Book;
+import se.lexicon.librarysystem.model.BookLoan;
 
 import javax.persistence.EntityManager;
 import java.util.ArrayList;

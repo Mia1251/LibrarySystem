@@ -1,7 +1,6 @@
 package se.lexicon.librarysystem.data;
 
-import se.lexicon.librarysystem.entity.AppUser;
-import se.lexicon.librarysystem.entity.Book;
+import se.lexicon.librarysystem.model.Book;
 
 import java.util.Collection;
 

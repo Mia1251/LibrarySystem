@@ -3,7 +3,7 @@ package se.lexicon.librarysystem.data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import se.lexicon.librarysystem.entity.Details;
+import se.lexicon.librarysystem.model.Details;
 
 import javax.persistence.EntityManager;
 import java.util.ArrayList;
